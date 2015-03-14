@@ -40,10 +40,8 @@ function getWinner(playerMove,computerMove) {
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
-function getWinner(playerMove,computerMove) {
-    var winner;
     if(playerMove === 'rock' && computerMove === 'scissors') {
-        winner = 'player';
+        winner = 'player wins';
         }
     else if (playerMove === 'rock' && computerMove === 'paper'){
         winner = 'computer';
@@ -52,7 +50,7 @@ function getWinner(playerMove,computerMove) {
         winner = 'tie';
         }
     else if (playerMove === 'paper' && computerMove === 'rock') {
-            winner = 'player';
+        winner = 'player';
         }
     else if (playerMove === 'paper' && computerMove === 'scissors') {
         winner = 'computer';
@@ -79,7 +77,30 @@ function playToFive() {
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
+    while(playerWins < 5 && computerWins < 5) { 
+        var computerMove = getComputerMove(randomPlay());
+        var playerMove = getPlayerMove(getInput());
+        var winner = getWinner(playerMove, computerMove);
 
+        console.log("Player chose " + playerMove + " while Computer chose " + computerMove);
+
+            if (winner === 'player') {
+                console.log("Player Wins!");
+                playerWins++;
+            }
+            else if (winner === 'computer') {
+                console.log("Computer Wins!");
+                computerWins++;
+            }
+            else { 
+            console.log("It is a Tie!");
+            }
+        
+      
+        console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
+        
+    }
     return [playerWins, computerWins];
 }
+
 
