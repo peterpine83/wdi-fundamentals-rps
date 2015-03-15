@@ -96,7 +96,6 @@ function playToFive() {
             console.log("It is a Tie!");
             }
         
-      
         console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
         
     }
